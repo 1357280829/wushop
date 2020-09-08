@@ -33,7 +33,9 @@ class CategoriesController extends AdminController
     {
         $form = new Form(new Category());
 
-        $form->select('parent_id', '父级分类')->options(Category::selectOptions())->rules('required');
+        $form->select('parent_id', '父级分类')
+            ->options(Category::selectOptions(null, '顶级'))
+            ->rules('required');
         $form->text('name', '分类名称')->rules('required');
         $form->number('sort', '排序值');
 

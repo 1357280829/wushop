@@ -19,12 +19,23 @@
  */
 
 use Encore\Admin\Form;
+use App\Admin\Extensions\WangEditor;
+use Encore\Admin\Grid;
 
 Encore\Admin\Form::forget(['map', 'editor']);
+
+Form::extend('editor', WangEditor::class);
 
 Form::init(function (Form $form) {
     $form->disableViewCheck();
     $form->tools(function (Form\Tools $tools) {
         $tools->disableView();
+    });
+});
+
+Grid::init(function (Grid $grid) {
+    $grid->disableColumnSelector();
+    $grid->actions(function (Grid\Displayers\Actions $actions) {
+        $actions->disableView();
     });
 });

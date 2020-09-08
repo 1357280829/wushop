@@ -15,4 +15,8 @@ Route::group([
 
     $router->get('/', 'HomeController@index')->name('home');
     $router->resource('categories', 'CategoriesController');
+    $router->resource('products', 'ProductsController');
+    $router->get('products/{product}/skus', 'ProductsController@skusIndex');
+    $router->put('products/{productId}/skus/{productSkuId}', 'ProductsController@skuUpdate');
+    $router->resource('product-param-types', 'ProductParamTypeController');
 });
