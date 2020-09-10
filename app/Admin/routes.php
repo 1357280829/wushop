@@ -19,4 +19,5 @@ Route::group([
     $router->get('products/{product}/skus', 'ProductsController@skusIndex');
     $router->put('products/{productId}/skus/{productSkuId}', 'ProductsController@skuUpdate');
     $router->resource('product-param-types', 'ProductParamTypeController');
+    $router->resource('wechat-users', 'WechatUsersController');
 });
