@@ -39,3 +39,16 @@ Grid::init(function (Grid $grid) {
         $actions->disableView();
     });
 });
+
+//  修改 footer
+$footerName = config('admin.footer-name');
+$script = <<<EOT
+
+setTimeout(()=>{
+    var tag = document.getElementsByClassName('main-footer')[0];
+    tag.innerHTML = "<strong>{$footerName}</strong>";
+},0);
+
+EOT;
+
+Encore\Admin\Admin::script($script);

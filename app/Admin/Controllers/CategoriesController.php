@@ -37,6 +37,7 @@ class CategoriesController extends AdminController
             ->options(Category::selectOptions(null, '顶级'))
             ->rules('required');
         $form->text('name', '分类名称')->rules('required');
+        $form->image('cover_url', '封面图');
         $form->number('sort', '排序值');
 
         return $form;

@@ -10,7 +10,7 @@ class Category extends Model
     use SoftDeletes, ModelTree;
 
     protected $fillable = [
-        'name', 'parent_id', 'sort',
+        'name', 'cover_url', 'parent_id', 'sort',
     ];
 
     public function __construct(array $attributes = [])

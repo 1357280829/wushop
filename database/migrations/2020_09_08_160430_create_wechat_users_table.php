@@ -13,6 +13,7 @@ class CreateWechatUsersTable extends Migration
      */
     public function up()
     {
+        //  微信用户表
         Schema::create('wechat_users', function (Blueprint $table) {
             $table->id();
             $table->string('nickname')->nullable()->comment('用户昵称');

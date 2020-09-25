@@ -18,4 +18,9 @@ use Illuminate\Support\Facades\Route;
 //    return $request->user();
 //});
 
+//  上传资源
 Route::post('resources', 'ResourcesController@store')->name('resources.store');
+
+//  - 全局运费设置
+Route::get('global-freight-setting', 'GlobalFreightSettingController@index')->name('global-freight-setting.index');
+Route::post('global-freight-setting', 'GlobalFreightSettingController@store')->name('global-freight-setting.store');
