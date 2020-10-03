@@ -109,6 +109,8 @@ class ProductsController extends AdminController
             $actions->disableEdit();
         });
 
+        $grid->model()->where('product_id', $product->id);
+
         $grid->model()->collection(function (Collection $collection) {
             $productParamIdToNames = ProductParam::pluck('name', 'id')->toArray();
             $collection->each(function (ProductSku $productSku) use ($productParamIdToNames) {
